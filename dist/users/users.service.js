@@ -43,8 +43,10 @@ let UsersService = class UsersService {
             _id: id
         });
     }
-    update(id, updateUserDto) {
-        return `This action updates a #${id} user`;
+    async update(updateUserDto) {
+        return await this.userModel.updateOne({
+            _id: updateUserDto._id
+        }, Object.assign({}, updateUserDto));
     }
     remove(id) {
         return `This action removes a #${id} user`;

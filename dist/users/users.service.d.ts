@@ -15,6 +15,6 @@ export declare class UsersService {
     }, never>, mongoose.Document<unknown, {}, User> & Omit<User & {
         _id: mongoose.Types.ObjectId;
     }, never>, {}, User>;
-    update(id: number, updateUserDto: UpdateUserDto): string;
+    update(updateUserDto: UpdateUserDto): Promise<mongoose.UpdateWriteOpResult>;
     remove(id: number): string;
 }

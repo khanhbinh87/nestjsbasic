@@ -38,6 +38,6 @@ export declare class UsersController {
     }, never>, import("mongoose").Document<unknown, {}, import("./schemas/user.schema").User> & Omit<import("./schemas/user.schema").User & {
         _id: import("mongoose").Types.ObjectId;
     }, never>, {}, import("./schemas/user.schema").User>;
-    update(id: string, updateUserDto: UpdateUserDto): string;
+    update(updateUserDto: UpdateUserDto): Promise<import("mongoose").UpdateWriteOpResult>;
     remove(id: string): string;
 }
