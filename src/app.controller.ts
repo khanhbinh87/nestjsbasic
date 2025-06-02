@@ -12,7 +12,7 @@ export class AppController {
   @Render('home')
   getHello() {
     const mess = this.appService.getHello();
-    console.log('port',this.configService.get<string>('PORT'))
+
     return {
       mess:mess
     }

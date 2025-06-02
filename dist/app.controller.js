@@ -20,7 +20,6 @@ let AppController = class AppController {
     }
     getHello() {
         const mess = this.appService.getHello();
-        console.log('port', this.configService.get('PORT'));
         return {
             mess: mess
         };
