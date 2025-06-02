@@ -36,7 +36,12 @@ let UsersService = class UsersService {
         return `This action returns all users`;
     }
     findOne(id) {
-        return `This action returns a #${id} user`;
+        if (!mongoose_2.default.Types.ObjectId.isValid(id)) {
+            return 'Not found user';
+        }
+        return this.userModel.findOne({
+            _id: id
+        });
     }
     update(id, updateUserDto) {
         return `This action updates a #${id} user`;

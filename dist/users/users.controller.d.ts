@@ -33,7 +33,11 @@ export declare class UsersController {
         _id: import("mongoose").Types.ObjectId;
     }, never>>;
     findAll(): string;
-    findOne(id: string): string;
+    findOne(id: string): "Not found user" | import("mongoose").Query<import("mongoose").Document<unknown, {}, import("./schemas/user.schema").User> & Omit<import("./schemas/user.schema").User & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>, import("mongoose").Document<unknown, {}, import("./schemas/user.schema").User> & Omit<import("./schemas/user.schema").User & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>, {}, import("./schemas/user.schema").User>;
     update(id: string, updateUserDto: UpdateUserDto): string;
     remove(id: string): string;
 }
