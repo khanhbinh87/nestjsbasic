@@ -49,7 +49,12 @@ let UsersService = class UsersService {
         }, Object.assign({}, updateUserDto));
     }
     remove(id) {
-        return `This action removes a #${id} user`;
+        if (!mongoose_2.default.Types.ObjectId.isValid(id)) {
+            return 'Not found user';
+        }
+        return this.userModel.deleteOne({
+            _id: id
+        });
     }
 };
 UsersService = __decorate([

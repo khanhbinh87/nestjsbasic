@@ -39,5 +39,7 @@ export declare class UsersController {
         _id: import("mongoose").Types.ObjectId;
     }, never>, {}, import("./schemas/user.schema").User>;
     update(updateUserDto: UpdateUserDto): Promise<import("mongoose").UpdateWriteOpResult>;
-    remove(id: string): string;
+    remove(id: string): "Not found user" | import("mongoose").Query<import("mongodb").DeleteResult, import("mongoose").Document<unknown, {}, import("./schemas/user.schema").User> & Omit<import("./schemas/user.schema").User & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>, {}, import("./schemas/user.schema").User>;
 }

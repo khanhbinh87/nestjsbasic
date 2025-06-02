@@ -16,5 +16,7 @@ export declare class UsersService {
         _id: mongoose.Types.ObjectId;
     }, never>, {}, User>;
     update(updateUserDto: UpdateUserDto): Promise<mongoose.UpdateWriteOpResult>;
-    remove(id: number): string;
+    remove(id: string): "Not found user" | mongoose.Query<mongoose.mongo.DeleteResult, mongoose.Document<unknown, {}, User> & Omit<User & {
+        _id: mongoose.Types.ObjectId;
+    }, never>, {}, User>;
 }
