@@ -15,6 +15,12 @@ export declare class UsersService {
     }, never>, mongoose.Document<unknown, {}, User> & Omit<User & {
         _id: mongoose.Types.ObjectId;
     }, never>, {}, User>;
+    findOneByUserName(username: string): mongoose.Query<mongoose.Document<unknown, {}, User> & Omit<User & {
+        _id: mongoose.Types.ObjectId;
+    }, never>, mongoose.Document<unknown, {}, User> & Omit<User & {
+        _id: mongoose.Types.ObjectId;
+    }, never>, {}, User>;
+    isValidPassword(password: string, hash: string): boolean;
     update(updateUserDto: UpdateUserDto): Promise<mongoose.UpdateWriteOpResult>;
     remove(id: string): "Not found user" | mongoose.Query<mongoose.mongo.DeleteResult, mongoose.Document<unknown, {}, User> & Omit<User & {
         _id: mongoose.Types.ObjectId;

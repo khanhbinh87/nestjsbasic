@@ -43,6 +43,14 @@ let UsersService = class UsersService {
             _id: id
         });
     }
+    findOneByUserName(username) {
+        return this.userModel.findOne({
+            email: username
+        });
+    }
+    isValidPassword(password, hash) {
+        return (0, bcryptjs_1.compareSync)(password, hash);
+    }
     async update(updateUserDto) {
         return await this.userModel.updateOne({
             _id: updateUserDto._id
